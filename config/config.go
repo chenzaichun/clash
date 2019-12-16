@@ -77,6 +77,7 @@ type FallbackFilter struct {
 type Tun struct {
 	Enable    bool   `yaml:"enable" json:"enable"`
 	DeviceURL string `yaml:"device-url" json:"device-url"`
+	DNSListen string `yaml:"dns-listen" json:"dns-listen"`
 }
 
 // Experimental config
@@ -166,6 +167,7 @@ func UnmarshalRawConfig(buf []byte) (*RawConfig, error) {
 		Tun: Tun{
 			Enable:    false,
 			DeviceURL: "dev://clash0",
+			DNSListen: "",
 		},
 		DNS: RawDNS{
 			Enable:      false,
